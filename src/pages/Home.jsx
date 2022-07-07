@@ -1,21 +1,25 @@
 import React, { Component } from "react";
+import Card from "../components/global/Card";
+import CardContainer from "../components/global/CardContainer";
 import Layout from "../components/layout/Layout";
-import Women from "../components/categories/Women";
-import Men from "../components/categories/Men";
-import Kids from "../components/categories/Kids";
 
 class Home extends Component {
-  constructor() {
-    super();
-    this.categoryTab = [<Women key={0} />, <Men key={1} />, <Kids key={2} />];
+  constructor(props) {
+    super(props);
+
     this.state = {
-      current: 2,
+      current: 0,
     };
   }
+
   render() {
     return (
       <Layout>
-        <div>{this.categoryTab[this.state.current]}</div>
+        <CardContainer heading={"Women"}>
+          <Card />
+          <Card />
+          <Card />
+        </CardContainer>
       </Layout>
     );
   }

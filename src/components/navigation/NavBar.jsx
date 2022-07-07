@@ -8,20 +8,31 @@ const Wrapper = styled.nav`
   height: 80px;
   padding-left: 101px;
   padding-right: 101px;
-  background: #e6e6e6;
+  // background: #e6e6e6;
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
 const Logo = styled.div`
-  height: 41px;
-  width: 41px;
+  max-width: 100%;
+  height: auto;
 `;
 
 const Cart = styled.div`
-  height: 20px;
-  width: 20px;
+  max-width: 100%;
+  height: auto;
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px;
+  gap: 22px;
+  width: 204px;
+  height: 40px;
 `;
 
 class NavBar extends Component {
@@ -31,12 +42,14 @@ class NavBar extends Component {
         <Wrapper>
           <CategorySwitcher />
           <Logo>
-            <Image alt="logo" src="/assets/logo.png" />
+            <Image alt="logo" src="/assets/logo.png" width={41} height={41} />
           </Logo>
-          <Cart>
-            <Image alt="cart" src="/assets/cart.png" />
-          </Cart>
-          <CurrencySwitcher />
+          <Container>
+            <CurrencySwitcher />
+            <Cart>
+              <Image alt="cart" src="/assets/cart.png" width={20} height={20} />
+            </Cart>
+          </Container>
         </Wrapper>
       </React.Fragment>
     );
