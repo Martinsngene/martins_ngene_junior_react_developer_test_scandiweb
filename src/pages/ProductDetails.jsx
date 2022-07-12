@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Layout from "../components/layout/Layout";
 import ViewImages from "../components/global/ViewImages";
 import CustomButton from "../components/global/CustomButton";
+import ProductInfo from "../components/global/ProductInfo";
 
 const Wrapper = styled.div`
   display: grid;
@@ -66,6 +67,7 @@ class Product extends Component {
             />
           </Column1>
           <Column2>
+            <ProductInfo />
             <CustomButton label="ADD TO CART" />
             <Text>
               Find stunning women's cocktail dresses and party dresses. Stand
