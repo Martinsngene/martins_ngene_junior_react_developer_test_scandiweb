@@ -4,11 +4,20 @@ import ViewImages from "../components/global/ViewImages";
 import CustomButton from "../components/global/CustomButton";
 import ProductInfo from "../components/global/ProductInfo";
 import { Column1, Column2, Wrapper, Text } from "./ProductDetails.styled";
-// import SlideImages from "../components/global/SlideImages";
 
 class Product extends Component {
   constructor() {
     super();
+    this.sizeStyles = {
+      width: "300px",
+      height: "45px",
+      marginBottom: "29px",
+    };
+    this.colorStyles = {
+      width: "114px",
+      height: "32px",
+      marginBottom: "45px",
+    };
     this.sampleImageToggle = [
       {
         img: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YXJjaGl0ZWN0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
@@ -31,6 +40,9 @@ class Product extends Component {
 
       "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXJjaGl0ZWN0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
     ];
+
+    this.sizes = ["XS", "S", "M", "L"];
+    this.colors = ["#D3D2D5", "#2B2B2B", "#0F6450"];
   }
   render() {
     return (
@@ -43,7 +55,18 @@ class Product extends Component {
             />
           </Column1>
           <Column2>
-            <ProductInfo />
+            <ProductInfo
+              sizeStyles={this.sizeStyles}
+              colorStyles={this.colorStyles}
+              storeName="Apollo"
+              productName="Running Short"
+              productNameMb="43px"
+              sizes={this.sizes}
+              colors={this.colors}
+              tag
+              Price="$50.00"
+              priceMb="20px"
+            />
             <CustomButton
               background="#5ece7b"
               border="none"
@@ -59,7 +82,6 @@ class Product extends Component {
             </Text>
           </Column2>
         </Wrapper>
-        {/* <SlideImages imagesArray={this.imageToggle} /> */}
       </Layout>
     );
   }

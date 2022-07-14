@@ -10,7 +10,7 @@ class NavBar extends Component {
     super();
     this.open = false;
     this.state = {
-      showCart: this.open,
+      showCart: false,
     };
   }
   render() {
@@ -23,7 +23,7 @@ class NavBar extends Component {
           </Logo>
           <Container>
             <CurrencySwitcher />
-            <CartIcon onClick={() => this.setState({ showCart: !this.open })}>
+            <CartIcon onClick={() => this.setState({ showCart: true })}>
               <Image alt="cart" src="/assets/cart.png" width={20} height={20} />
             </CartIcon>
             {this.state.showCart && (

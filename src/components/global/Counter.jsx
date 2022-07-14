@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container } from "./TrayItem.styled";
+import { Button, Container, Count } from "./Counter.styled";
 
 class TrayItem extends Component {
   constructor(props) {
@@ -25,18 +25,16 @@ class TrayItem extends Component {
   render() {
     return (
       <Container>
-        Count: {this.state.count}
-        <br />
-        <div style={{ marginTop: "100px" }} />
-        <input
+        <Button
           type="button"
           onClick={this.onclick.bind(this, "add")}
-          value="Inc"
+          value="+"
         />
-        <input
+        <Count>{this.state.count}</Count>
+        <Button
           type="button"
           onClick={this.onclick.bind(this, "sub")}
-          value="Dec"
+          value="-"
         />
       </Container>
     );

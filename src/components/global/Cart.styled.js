@@ -16,7 +16,7 @@ export const Tray = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding: 32px 16px;
   gap: 32px;
   position: absolute;

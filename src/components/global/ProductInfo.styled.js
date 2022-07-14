@@ -26,7 +26,7 @@ export const ProductName = styled.h2`
   align-items: center;
   color: #1d1f22;
   margin-top: 0px;
-  margin-bottom: 43px;
+  margin-bottom: ${(props) => props.marginBottom};
 `;
 
 export const Container = styled.div`
@@ -74,7 +74,7 @@ export const Price = styled.h3`
   align-items: center;
   color: #1d1f22;
   margin-top: 0px;
-  margin-bottom: 20px;
+  margin-bottom: ${(props) => props.marginBottom};
 `;
 
 export const Span = styled.span`

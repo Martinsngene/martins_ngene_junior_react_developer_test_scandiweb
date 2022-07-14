@@ -6,6 +6,7 @@ class CustomButton extends Component {
     return (
       <Btn
         width={this.props.width}
+        height={this.props.height}
         background={this.props.background}
         border={this.props.border}
         fontSize={this.props.fontSize}

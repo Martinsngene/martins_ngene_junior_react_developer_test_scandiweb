@@ -1,41 +1,54 @@
 import React, { Component } from "react";
+import Image from "./Image";
+import { Button, Container } from "./SlideImages.styled";
 
 class SlideImages extends Component {
   constructor(props) {
     super(props);
-    this.num = 0;
-    this.state = {
-      val: this.num,
-    };
-
-    // Binding this keyword
-    this.increment = this.increment.bind(this);
-    this.decrement = this.decrement.bind(this);
+    this.state = { count: 0 };
   }
 
-  increment() {
-    this.setState({ val: this.num++ });
-    console.log(this.state.val);
-  }
-
-  decrement() {
-    this.setState({ val: this.num-- });
-    console.log(this.state.val);
+  onclick(type) {
+    this.setState((prevState) => {
+      if (
+        this.state.count !== this.props.imagesArray.length - 1 &&
+        type === "add"
+      ) {
+        return {
+          count: prevState.count + 1,
+        };
+      }
+      if (this.state.count > 0 && type === "sub") {
+        return {
+          count: prevState.count - 1,
+        };
+      }
+    });
   }
   render() {
     return (
-      <div>
-        <div>
-          <img
-            src={this.props.imagesArray[this.state.val]}
-            width={300}
-            height={300}
-            alt="sample"
-          />
-          <button onClick={this.decrement}>-</button>
-          <button onClick={this.increment}>+</button>
-        </div>
-      </div>
+      <Container>
+        <Image
+          src={this.props.imagesArray[this.state.count]}
+          width={200}
+          height={288}
+          alt="sample"
+        />
+        <Button
+          right="56px"
+          bottom="0px"
+          onClick={this.onclick.bind(this, "sub")}
+        >
+          &gt;
+        </Button>
+        <Button
+          right="0px"
+          bottom="0px"
+          onClick={this.onclick.bind(this, "add")}
+        >
+          &lt;
+        </Button>
+      </Container>
     );
   }
 }

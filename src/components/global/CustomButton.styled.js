@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const Btn = styled.button`
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: ${(props) => props.padding};
   width: ${(props) => props.width};
-  height: 52px;
+  height: ${(props) => props.height};
   color: #fff;
   background: ${(props) => props.background};
   border: ${(props) => props.border};
