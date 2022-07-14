@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import styled from "styled-components";
-
-const Img = styled.img``;
+import { Img } from "./Image.styled";
 
 class Image extends Component {
   render() {

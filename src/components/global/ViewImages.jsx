@@ -1,34 +1,6 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 import Image from "./Image";
-
-const Wrapper = styled.div`
-  display: flex;
-  width: 724px;
-  align-items: start;
-  justify-content: space-between;
-`;
-
-const Item1 = styled.div`
-  width: 79px;
-  height: 320px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const Item2 = styled.div`
-  width: 610px;
-  height: 511px;
-`;
-
-const Button = styled.button`
-  padding: 0;
-  background: #fff;
-  border: none;
-  cursor: pointer;
-`;
+import { Button, Item1, Item2, Wrapper } from "./ViewImages.styled";
 
 class ViewImages extends Component {
   constructor(props) {

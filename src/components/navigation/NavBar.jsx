@@ -1,41 +1,18 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import Cart from "../global/Cart";
 import CategorySwitcher from "../global/CategorySwitcher";
 import CurrencySwitcher from "../global/CurrencySwitcher";
 import Image from "../global/Image";
-
-const Wrapper = styled.nav`
-  height: 80px;
-  padding-left: 101px;
-  padding-right: 101px;
-  // background: #e6e6e6;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const Logo = styled.div`
-  max-width: 100%;
-  height: auto;
-`;
-
-const Cart = styled.div`
-  max-width: 100%;
-  height: auto;
-`;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0px;
-  gap: 22px;
-  width: 204px;
-  height: 40px;
-`;
+import { CartIcon, Container, Logo, Wrapper } from "./NavBar.styled";
 
 class NavBar extends Component {
+  constructor() {
+    super();
+    this.open = false;
+    this.state = {
+      showCart: this.open,
+    };
+  }
   render() {
     return (
       <React.Fragment>
@@ -46,9 +23,12 @@ class NavBar extends Component {
           </Logo>
           <Container>
             <CurrencySwitcher />
-            <Cart>
+            <CartIcon onClick={() => this.setState({ showCart: !this.open })}>
               <Image alt="cart" src="/assets/cart.png" width={20} height={20} />
-            </Cart>
+            </CartIcon>
+            {this.state.showCart && (
+              <Cart closeCart={() => this.setState({ showCart: false })} />
+            )}
           </Container>
         </Wrapper>
       </React.Fragment>

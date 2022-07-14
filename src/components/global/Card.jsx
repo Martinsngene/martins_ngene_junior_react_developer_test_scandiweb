@@ -1,53 +1,38 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import {
+  CartIcon,
+  Details,
+  ImageContainer,
+  Name,
+  Price,
+  Wrapper,
+} from "./Card.styled";
 import Image from "./Image";
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 386px;
-  height: 444px;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 16px;
-
-  // Apply style on hover
-  &:hover {
-    filter: drop-shadow(0px 4px 35px rgba(168, 172, 176, 0.19));
-  }
-`;
-
-const ImageContainer = styled.div``;
-
-const Details = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 0px;
-  padding: 0px;
-  width: 354px;
-  height: 58px;
-`;
-
-const Name = styled.p`
-  font-style: normal;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 160%;
-`;
-
-const Price = styled.p`
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 160%;
-`;
-
 class Card extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showIcon: false,
+    };
+
+    this.setIcon = this.setIcon.bind(this);
+    this.removeIcon = this.removeIcon.bind(this);
+  }
+
+  setIcon() {
+    this.setState({ showIcon: true });
+  }
+  removeIcon() {
+    this.setState({ showIcon: false });
+  }
   render() {
     return (
       <React.Fragment>
-        <Wrapper>
+        <Wrapper onMouseOver={this.setIcon} onMouseOut={this.removeIcon}>
+          <CartIcon showIcon={this.state.showIcon}>
+            <Image alt="icon" width={52} height={52} src="/assets/cart2.png" />
+          </CartIcon>
           <ImageContainer>
             <Image
               alt="dress"

@@ -1,20 +1,13 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import { Dropdown } from "./CurrencySwitcher.styled";
 
-const Dropdown = styled.select`
-  outline: none;
-  border: none;
-  width: 38px;
-  height: 29px;
-  font-size: 18px;
-`;
 class CurrencySwitcher extends Component {
   constructor() {
     super();
     this.currencies = [
-      { symbol: "$ USD", id: "01" },
-      { symbol: "€ EUR", id: "02" },
-      { symbol: "¥ JPY", id: "03" },
+      { symbol: "$ USD", id: 0 },
+      { symbol: "€ EUR", id: 1 },
+      { symbol: "¥ JPY", id: 2 },
     ];
   }
 
@@ -22,8 +15,8 @@ class CurrencySwitcher extends Component {
     return (
       <React.Fragment>
         <Dropdown>
-          {this.currencies.map((item, index) => {
-            return <option key={index}>{item.symbol}</option>;
+          {this.currencies.map((item) => {
+            return <option key={item.id}>{item.symbol}</option>;
           })}
         </Dropdown>
       </React.Fragment>

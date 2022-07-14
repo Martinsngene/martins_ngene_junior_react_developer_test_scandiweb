@@ -1,42 +1,5 @@
 import React, { Component } from "react";
-import styled from "styled-components";
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  padding: 0px;
-  width: 285px;
-  height: 56px;
-`;
-
-const Button = styled.button`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0px;
-  width: 90px;
-  height: 56px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 120%;
-  color: #1d1f22;
-  border: none;
-  background: #fff;
-  cursor: pointer;
-
-  // Apply style on hover
-  &:hover {
-    color: #5ece7b;
-    border-bottom: 2px solid #5ece7b;
-  }
-  &:visited {
-    color: #5ece7b;
-    border-bottom: 2px solid #5ece7b;
-  }
-`;
+import { Button, Container } from "./CategorySwitcher.styled";
 
 class CategorySwitcher extends Component {
   constructor(props) {

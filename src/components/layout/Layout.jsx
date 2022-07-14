@@ -1,13 +1,6 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 import NavBar from "../navigation/NavBar";
-
-const Wrapper = styled.main`
-  max-width: 100%;
-  padding-left: 101px;
-  padding-right: 101px;
-  background: #fff;
-`;
+import { Wrapper } from "./Layout.styled";
 
 class Layout extends Component {
   render() {

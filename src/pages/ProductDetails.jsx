@@ -1,34 +1,10 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 import Layout from "../components/layout/Layout";
 import ViewImages from "../components/global/ViewImages";
 import CustomButton from "../components/global/CustomButton";
 import ProductInfo from "../components/global/ProductInfo";
-
-const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 100px;
-`;
-
-const Column1 = styled.div`
-  grid-column: span 8 / span 8;
-`;
-
-const Column2 = styled.div`
-  width: 292px;
-  grid-column: span 4 / span 4;
-`;
-
-const Text = styled.p`
-  width: 292px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 159.96%;
-  color: #1d1f22;
-`;
+import { Column1, Column2, Wrapper, Text } from "./ProductDetails.styled";
+// import SlideImages from "../components/global/SlideImages";
 
 class Product extends Component {
   constructor() {
@@ -68,7 +44,14 @@ class Product extends Component {
           </Column1>
           <Column2>
             <ProductInfo />
-            <CustomButton label="ADD TO CART" />
+            <CustomButton
+              background="#5ece7b"
+              border="none"
+              width="292px"
+              color="#fff"
+              label="ADD TO CART"
+              padding="16px 32px"
+            />
             <Text>
               Find stunning women's cocktail dresses and party dresses. Stand
               out in lace and metallic cocktail dresses and party dresses from
@@ -76,6 +59,7 @@ class Product extends Component {
             </Text>
           </Column2>
         </Wrapper>
+        {/* <SlideImages imagesArray={this.imageToggle} /> */}
       </Layout>
     );
   }
