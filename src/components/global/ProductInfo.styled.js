@@ -9,19 +9,17 @@ export const Wrapper = styled.div`
 export const StoreName = styled.h2`
   font-style: normal;
   font-weight: 600;
-  font-size: 30px;
-  line-height: 27px;
+  font-size: ${(props) => props.fontSize};
   display: flex;
   align-items: center;
   color: #1d1f22;
-  margin-bottom: 16px;
+  margin-bottom: ${(props) => (props.small | false ? "4px" : "16px")};
 `;
 
 export const ProductName = styled.h2`
   font-style: normal;
   font-weight: 400;
-  font-size: 30px;
-  line-height: 27px;
+  font-size: ${(props) => props.fontSize};
   display: flex;
   align-items: center;
   color: #1d1f22;
@@ -32,24 +30,26 @@ export const ProductName = styled.h2`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: ${(props) => props.marginTop};
+  margin-top: 0px;
+  height: ${(props) => props.height};
 `;
 
 export const Label = styled.h3`
   font-style: normal;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 18px;
+  font-size: ${(props) => props.fontSize};
   display: flex;
   align-items: center;
   text-align: center;
   color: #1d1f22;
+  margin-top: ${(props) => (props.small | false ? "0px" : "16px")};
+  margin-bottom: ${(props) => (props.small | false ? "0px" : "16px")};
 `;
 
 export const Options = styled.button`
   box-sizing: border-box;
-  width: 63px;
-  height: 45px;
+  width: ${(props) => (props.small | false ? "24px" : "63px")};
+  height: ${(props) => (props.small | false ? "24px" : "45px")};
   background: #fff;
   border: 1px solid #1d1f22;
   cursor: pointer;
@@ -59,8 +59,8 @@ export const Options = styled.button`
 `;
 
 export const ColorBox = styled.button`
-  width: 32px;
-  height: 32px;
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
   border: none;
   background: ${(props) => props.background};
   cursor: pointer;
@@ -69,7 +69,7 @@ export const ColorBox = styled.button`
 export const Price = styled.h3`
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
+  font-size: ${(props) => props.fontSize};
   display: flex;
   align-items: center;
   color: #1d1f22;
@@ -80,7 +80,7 @@ export const Price = styled.h3`
 export const Span = styled.span`
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: ${(props) => (props.small | false ? "12px" : "16px")};
   line-height: 18px;
   display: flex;
   align-items: center;

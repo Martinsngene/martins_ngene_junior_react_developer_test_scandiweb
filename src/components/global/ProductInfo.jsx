@@ -16,34 +16,59 @@ class ProductInfo extends Component {
   render() {
     return (
       <Wrapper>
-        <StoreName>{this.props.storeName}</StoreName>
-        <ProductName marginBottom={this.props.productNameMb}>
+        <StoreName small={this.props.smallMb} fontSize={this.props.storeFont}>
+          {this.props.storeName}
+        </StoreName>
+        <ProductName
+          fontSize={this.props.productFont}
+          marginBottom={this.props.productNameMb}
+        >
           {this.props.productName}
         </ProductName>
         {this.props.cart && (
           <Container>
-            <Price marginBottom={this.props.cartPriceMb}>
+            <Price
+              fontSize={this.props.priceFont}
+              marginBottom={this.props.cartPriceMb}
+            >
               {this.props.cartPrice}
             </Price>
           </Container>
         )}
-        <Container marginTop="0px">
-          <Label>SIZE:</Label>
+        <Container height={this.props.containerHeight}>
+          <Label
+            small={this.props.smallLabelMargin}
+            fontSize={this.props.labelFont}
+          >
+            SIZE:
+          </Label>
           <Content {...this.props.sizeStyles}>
             {this.props.sizes.map((size, index) => {
               return (
-                <Options key={index}>
-                  <Span>{size}</Span>
+                <Options small={this.props.smallSize} key={index}>
+                  <Span small={this.props.smallFont}>{size}</Span>
                 </Options>
               );
             })}
           </Content>
         </Container>
-        <Container>
-          <Label>COLOR:</Label>
+        <Container height={this.props.containerHeight}>
+          <Label
+            small={this.props.smallLabelMargin}
+            fontSize={this.props.labelFont}
+          >
+            COLOR:
+          </Label>
           <Content {...this.props.colorStyles}>
             {this.props.colors.map((item, index) => {
-              return <ColorBox key={index} background={item} />;
+              return (
+                <ColorBox
+                  height={this.props.boxHeight}
+                  width={this.props.boxWidth}
+                  key={index}
+                  background={item}
+                />
+              );
             })}
           </Content>
         </Container>

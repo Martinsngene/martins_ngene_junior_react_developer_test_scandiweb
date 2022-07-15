@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   position: relative;
-  width: 200px;
-  height: 288px;
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
 `;
 
 export const Button = styled.button`

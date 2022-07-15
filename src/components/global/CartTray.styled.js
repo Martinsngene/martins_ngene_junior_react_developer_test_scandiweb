@@ -8,14 +8,15 @@ export const Container = styled.div`
   left: 0px;
   z-index: 50;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: rgba(57, 55, 72, 0.22);
+  overflow: auto;
 `;
 
 export const Tray = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: flex-start;
   padding: 32px 16px;
   gap: 32px;
@@ -27,7 +28,7 @@ export const Tray = styled.div`
   background: #ffffff;
 `;
 
-export const Header = styled.span`
+export const Heading = styled.span`
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -35,6 +36,7 @@ export const Header = styled.span`
   text-align: right;
   color: #1d1f22;
 `;
+export const Header = styled.span``;
 
 export const Counter = styled.span`
   font-style: normal;
@@ -50,4 +52,9 @@ export const BtnContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+`;
+
+export const Row = styled.div`
+  width: 100%;
+  background: #fff;
 `;

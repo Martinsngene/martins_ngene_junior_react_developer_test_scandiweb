@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 45px;
-  height: 288px;
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,16 +12,16 @@ export const Container = styled.div`
 export const Button = styled.input`
   background: #fff;
   border: 1px solid #1d1f22;
-  width: 45px;
-  height: 45px;
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
   color: #1d1f22;
-  font-size: 18px;
+  font-size: ${(props) => props.fontSize};
   padding: 0px;
 `;
 
 export const Count = styled.p`
   font-weight: 500;
-  font-size: 24px;
+  font-size: ${(props) => props.fontSize};
   line-height: 160%;
   display: flex;
   align-items: center;

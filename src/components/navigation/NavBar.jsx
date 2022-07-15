@@ -1,17 +1,25 @@
 import React, { Component } from "react";
-import Cart from "../global/Cart";
+import CartTray from "../global/CartTray";
 import CategorySwitcher from "../global/CategorySwitcher";
 import CurrencySwitcher from "../global/CurrencySwitcher";
 import Image from "../global/Image";
-import { CartIcon, Container, Logo, Wrapper } from "./NavBar.styled";
+import { Badge, CartIcon, Container, Logo, Wrapper } from "./NavBar.styled";
 
 class NavBar extends Component {
   constructor() {
     super();
-    this.open = false;
+
     this.state = {
       showCart: false,
     };
+    // Binding this
+    this.handleShowCart = this.handleShowCart.bind(this);
+  }
+
+  handleShowCart() {
+    this.setState((prevState) => ({
+      showCart: !prevState.showCart,
+    }));
   }
   render() {
     return (
@@ -23,11 +31,12 @@ class NavBar extends Component {
           </Logo>
           <Container>
             <CurrencySwitcher />
-            <CartIcon onClick={() => this.setState({ showCart: true })}>
-              <Image alt="cart" src="/assets/cart.png" width={20} height={20} />
+            <CartIcon onClick={this.handleShowCart}>
+              <Badge>3</Badge>
+              <Image alt="cart" src="/assets/cart.png" width={30} height={30} />
             </CartIcon>
             {this.state.showCart && (
-              <Cart closeCart={() => this.setState({ showCart: false })} />
+              <CartTray closeCart={this.handleShowCart} />
             )}
           </Container>
         </Wrapper>

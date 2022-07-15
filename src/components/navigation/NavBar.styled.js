@@ -17,14 +17,30 @@ export const Logo = styled.div`
 
 export const CartIcon = styled.button`
   max-width: 100%;
-  height: auto;
+  width: 20px;
+  height: 20px;
+  position: relative;
   background: #fff;
   border: none;
+  cursor: pointer;
+`;
+
+export const Badge = styled.button`
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background: #43464e;
+  border-radius: 50%;
+  color: #fff;
+  top: -3px;
+  right: -25px;
 `;
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
   align-items: center;
   padding: 0px;

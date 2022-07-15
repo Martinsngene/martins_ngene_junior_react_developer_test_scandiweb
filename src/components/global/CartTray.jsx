@@ -1,17 +1,27 @@
 import React, { Component } from "react";
-import { BtnContainer, Container, Counter, Header, Tray } from "./Cart.styled";
+import {
+  BtnContainer,
+  Container,
+  Counter,
+  Header,
+  Heading,
+  Row,
+  Tray,
+} from "./CartTray.styled";
 import CustomButton from "./CustomButton";
-import TrayItem from "./TrayItem";
+import TrayItems from "./TrayItems";
 
 class Cart extends Component {
   render() {
     return (
       <Container>
         <Tray>
-          <div>
-            <Header>My Bag</Header> <Counter>3 items</Counter>
-          </div>
-          <TrayItem />
+          <Header>
+            <Heading>My Bag</Heading> <Counter>3 items</Counter>
+          </Header>
+          <Row style={{ overflow: "scroll" }}>
+            <TrayItems />
+          </Row>
 
           <BtnContainer>
             <CustomButton

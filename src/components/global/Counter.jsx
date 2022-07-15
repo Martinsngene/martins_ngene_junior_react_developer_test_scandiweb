@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, Container, Count } from "./Counter.styled";
 
-class TrayItem extends Component {
+class Counter extends Component {
   constructor(props) {
     super(props);
     this.state = { count: 0 };
@@ -24,14 +24,23 @@ class TrayItem extends Component {
 
   render() {
     return (
-      <Container>
+      <Container
+        width={this.props.counterContainerWidth}
+        height={this.props.counterContainerHeight}
+      >
         <Button
+          width={this.props.counterBtnWidth}
+          height={this.props.counterBtnHeight}
+          fontSize={this.props.counterBtnFont}
           type="button"
           onClick={this.onclick.bind(this, "add")}
           value="+"
         />
-        <Count>{this.state.count}</Count>
+        <Count fontSize={this.props.counterFont}>{this.state.count}</Count>
         <Button
+          width={this.props.counterBtnWidth}
+          height={this.props.counterBtnHeight}
+          fontSize={this.props.counterBtnFont}
           type="button"
           onClick={this.onclick.bind(this, "sub")}
           value="-"
@@ -41,4 +50,4 @@ class TrayItem extends Component {
   }
 }
 
-export default TrayItem;
+export default Counter;

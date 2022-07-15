@@ -27,27 +27,34 @@ class SlideImages extends Component {
   }
   render() {
     return (
-      <Container>
+      <Container
+        width={this.props.containerWidth}
+        height={this.props.containerHeight}
+      >
         <Image
           src={this.props.imagesArray[this.state.count]}
-          width={200}
-          height={288}
+          width={this.props.sliderImageWidth}
+          height={this.props.sliderImageHeight}
           alt="sample"
         />
-        <Button
-          right="56px"
-          bottom="0px"
-          onClick={this.onclick.bind(this, "sub")}
-        >
-          &gt;
-        </Button>
-        <Button
-          right="0px"
-          bottom="0px"
-          onClick={this.onclick.bind(this, "add")}
-        >
-          &lt;
-        </Button>
+        {this.props.isSlider && (
+          <>
+            <Button
+              right="56px"
+              bottom="0px"
+              onClick={this.onclick.bind(this, "sub")}
+            >
+              &gt;
+            </Button>
+            <Button
+              right="0px"
+              bottom="0px"
+              onClick={this.onclick.bind(this, "add")}
+            >
+              &lt;
+            </Button>
+          </>
+        )}
       </Container>
     );
   }

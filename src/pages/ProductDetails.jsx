@@ -66,6 +66,11 @@ class Product extends Component {
               tag
               Price="$50.00"
               priceMb="20px"
+              boxWidth="32px"
+              boxHeight="32px"
+              storeFont="30px"
+              productFont="30px"
+              priceFont="24px"
             />
             <CustomButton
               background="#5ece7b"

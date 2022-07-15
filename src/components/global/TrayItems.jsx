@@ -1,32 +1,30 @@
 import React, { Component } from "react";
-import Layout from "../components/layout/Layout";
-import SlideImages from "../components/global/SlideImages";
-import Counter from "../components/global/Counter";
-import { Row, SlideContainer } from "./Cart.styled";
-import ProductInfo from "../components/global/ProductInfo";
-import TotalCart from "../components/global/TotalCart";
+import { Container, Row, SlideContainer } from "./TrayItems.styled";
+import ProductInfo from "./ProductInfo";
+import Counter from "./Counter";
+import SlideImages from "./SlideImages";
 
-class Cart extends Component {
+class TrayItems extends Component {
   constructor() {
     super();
     this.sizeStyles = {
-      width: "300px",
-      height: "45px",
-      marginBottom: "16px",
+      width: "120px",
+      height: "48px",
+      marginBottom: "0px",
       paddingTop: "0px",
     };
     this.colorStyles = {
-      width: "114px",
-      height: "32px",
-      marginBottom: "6px",
+      width: "68px",
+      height: "44px",
+      marginBottom: "0px",
     };
     this.counterStyles = {
-      counterContainerWidth: "45px",
-      counterContainerHeight: "288px",
-      counterBtnWidth: "45px",
-      counterBtnHeight: "45px",
-      counterBtnFont: "18px",
-      counterFont: "24px",
+      counterContainerWidth: "24px",
+      counterContainerHeight: "190px",
+      counterBtnWidth: "24px",
+      counterBtnHeight: "24px",
+      counterBtnFont: "16px",
+      counterFont: "16px",
     };
     this.sizes = ["XS", "S", "M", "L"];
     this.colors = ["#D3D2D5", "#2B2B2B", "#0F6450"];
@@ -40,29 +38,38 @@ class Cart extends Component {
   }
   render() {
     return (
-      <Layout>
+      <Container>
         <Row>
           <ProductInfo
             storeName="Apollo"
             productName="Running Short"
-            productNameMb="20px"
+            productNameMb="4px"
             sizes={this.sizes}
             colors={this.colors}
             cart
+            smallSize
+            smallFont
             cartPrice="$50.00"
+            cartPriceMb="20px"
             sizeStyles={this.sizeStyles}
             colorStyles={this.colorStyles}
-            boxWidth="32px"
-            boxHeight="32px"
+            boxWidth="20px"
+            boxHeight="20px"
+            storeFont="16px"
+            productFont="16px"
+            priceFont="16px"
+            labelFont="16px"
+            smallMb
+            smallLabelMargin
           />
           <SlideContainer>
             <Counter {...this.counterStyles} />
             <SlideImages
-              isSlider
-              containerWidth="200px"
-              containerHeight="288px"
-              sliderImageWidth={200}
-              sliderImageHeight={288}
+              isSlider={false}
+              containerWidth="121px"
+              containerHeight="190px"
+              sliderImageWidth={121}
+              sliderImageHeight={190}
               imagesArray={this.imageToggle}
             />
           </SlideContainer>
@@ -71,32 +78,40 @@ class Cart extends Component {
           <ProductInfo
             storeName="Apollo"
             productName="Running Short"
-            productNameMb="20px"
+            productNameMb="4px"
             sizes={this.sizes}
             colors={this.colors}
             cart
+            smallSize
+            smallFont
             cartPrice="$50.00"
+            cartPriceMb="20px"
             sizeStyles={this.sizeStyles}
             colorStyles={this.colorStyles}
-            boxWidth="32px"
-            boxHeight="32px"
+            boxWidth="20px"
+            boxHeight="20px"
+            storeFont="16px"
+            productFont="16px"
+            priceFont="16px"
+            labelFont="16px"
+            smallMb
+            smallLabelMargin
           />
           <SlideContainer>
             <Counter {...this.counterStyles} />
             <SlideImages
-              isSlider
-              containerWidth="200px"
-              containerHeight="288px"
-              sliderImageWidth={200}
-              sliderImageHeight={288}
+              isSlider={false}
+              containerWidth="121px"
+              containerHeight="190px"
+              sliderImageWidth={121}
+              sliderImageHeight={190}
               imagesArray={this.imageToggle}
             />
           </SlideContainer>
         </Row>
-        <TotalCart />
-      </Layout>
+      </Container>
     );
   }
 }
 
-export default Cart;
+export default TrayItems;
