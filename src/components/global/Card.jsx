@@ -30,7 +30,7 @@ class Card extends Component {
     return (
       <React.Fragment>
         <Wrapper onMouseOver={this.setIcon} onMouseOut={this.removeIcon}>
-          <CartIcon showIcon={this.state.showIcon}>
+          <CartIcon showIcon={this.state.showIcon} onClick={this.props.onClick}>
             <Image alt="icon" width={52} height={52} src="/assets/cart2.png" />
           </CartIcon>
           <ImageContainer>
