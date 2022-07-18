@@ -1,39 +1,52 @@
+import { Query } from "@apollo/client/react/components";
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { GET_ALL_CATEGORIES } from "../../api/schema/schema";
 import { Button, Container } from "./CategorySwitcher.styled";
+import { SETCATEGORY } from "../../app/actions/counter";
 
 class CategorySwitcher extends Component {
   constructor(props) {
     super(props);
-    this.categories = [
-      { text: "WOMEN", id: "00", current: 0 },
-      { text: "MEN", id: "01", current: 1 },
-      { text: "KIDS", id: "02", current: 2 },
-    ];
-
     this.state = {
-      current: 0,
+      current: "",
     };
+    // this.handleIncrement = this.handleIncrement.bind(this);
   }
-
+  handleSetCategory(value) {
+    this.props.SETCATEGORY(value);
+  }
   render() {
-    // console.log(this.state.current);
     return (
       <React.Fragment>
-        <Container>
-          {this.categories.map((category) => {
+        <Query query={GET_ALL_CATEGORIES}>
+          {({ loading, error, data }) => {
+            if (loading) return `Loading...`;
+            if (error) return `Something went wrong: ${error}`;
+
             return (
-              <Button
-                key={category.id}
-                onClick={() => this.setState({ current: category.current })}
-              >
-                {category.text}
-              </Button>
+              <Container>
+                {/* This map uses the fetched data to display the category name */}
+                {data.categories.map((category) => {
+                  return (
+                    <Button
+                      key={category.name}
+                      // onClick={() => this.setState({ current: category.name })}
+                      onClick={() =>
+                        this.handleSetCategory(category.name.toUpperCase())
+                      }
+                    >
+                      {category.name.toUpperCase()}
+                    </Button>
+                  );
+                })}
+              </Container>
             );
-          })}
-        </Container>
+          }}
+        </Query>
       </React.Fragment>
     );
   }
 }
 
-export default CategorySwitcher;
+export default connect(null, { SETCATEGORY })(CategorySwitcher);

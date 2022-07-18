@@ -25,7 +25,7 @@ export const CartIcon = styled.button`
   cursor: pointer;
 `;
 
-export const Badge = styled.button`
+export const Badge = styled.span`
   width: 20px;
   height: 20px;
   display: flex;

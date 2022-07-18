@@ -19,7 +19,7 @@ class Cart extends Component {
           <Header>
             <Heading>My Bag</Heading> <Counter>3 items</Counter>
           </Header>
-          <Row style={{ overflow: "scroll" }}>
+          <Row style={{ overflow: "auto" }}>
             <TrayItems />
           </Row>
 

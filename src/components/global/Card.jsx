@@ -35,15 +35,15 @@ class Card extends Component {
           </CartIcon>
           <ImageContainer>
             <Image
-              alt="dress"
-              src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=405&q=80"
+              alt="product sample"
+              src={this.props.src}
               width={354}
               height={330}
             />
           </ImageContainer>
           <Details>
-            <Name>Dress gown</Name>
-            <Price>$ 300</Price>
+            <Name>{this.props.brand}</Name>
+            <Price>{this.props.price}</Price>
           </Details>
         </Wrapper>
       </React.Fragment>

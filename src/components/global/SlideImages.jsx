@@ -38,7 +38,7 @@ class SlideImages extends Component {
           alt="sample"
         />
         {this.props.isSlider && (
-          <>
+          <React.Fragment>
             <Button
               right="56px"
               bottom="0px"
@@ -53,7 +53,7 @@ class SlideImages extends Component {
             >
               &lt;
             </Button>
-          </>
+          </React.Fragment>
         )}
       </Container>
     );
