@@ -15,22 +15,20 @@ class ViewImages extends Component {
   }
 
   updateState(item) {
-    this.setState({ url: item.id });
+    this.setState({ url: item });
   }
 
   render() {
+    // This variable is used to set the number of toggle images to a limit of 3
+    let size = 3;
     return (
       <Wrapper>
         <Item1>
-          {this.props.displayImageToggler.map((item) => {
+          {/* The slice() method keeps the length of the array at 3 */}
+          {this.props.displayImageToggler.slice(0, size).map((item, index) => {
             return (
-              <Button key={item.id} onClick={() => this.updateState(item)}>
-                <Image
-                  alt="sample select"
-                  src={item.img}
-                  width={79}
-                  height={80}
-                />
+              <Button key={index} onClick={() => this.updateState(index)}>
+                <Image alt="sample select" src={item} width={79} height={80} />
               </Button>
             );
           })}

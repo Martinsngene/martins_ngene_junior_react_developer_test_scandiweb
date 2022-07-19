@@ -9,13 +9,21 @@ export const Wrapper = styled.div`
   align-items: center;
   padding: 16px;
   position: relative;
+  cursor: pointer;
   // Apply style on hover
   &:hover {
+    transform: scale(1.05);
+    transition: 0.8s ease-out;
     box-shadow: 0px 4px 35px 0px #a8acb030;
   }
 `;
 
 export const ImageContainer = styled.div``;
+
+export const Link = styled.a`
+  text-decoration: none;
+  color: #1d1f22;
+`;
 
 export const Details = styled.div`
   display: flex;
@@ -53,4 +61,8 @@ export const CartIcon = styled.button`
   border: none;
   background: transparent;
   cursor: pointer;
+  &:hover {
+    transform: scale(1.2);
+    transition: 1s ease-out;
+  }
 `;

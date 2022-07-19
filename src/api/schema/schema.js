@@ -11,8 +11,8 @@ export const GET_ALL_CATEGORIES = gql`
 
 // This schema fetches all the details of a product
 export const GET_PRODUCT = gql`
-  {
-    product(id: productId) {
+  query GetProduct($productId: String!) {
+    product(id: $productId) {
       id
       name
       inStock
@@ -30,11 +30,11 @@ export const GET_PRODUCT = gql`
         }
       }
       prices {
-        amount
         currency {
           label
           symbol
         }
+        amount
       }
       brand
     }

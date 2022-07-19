@@ -40,7 +40,7 @@ class ProductInfo extends Component {
             small={this.props.smallLabelMargin}
             fontSize={this.props.labelFont}
           >
-            SIZE:
+            {this.props.sizesLabel}
           </Label>
           <Content {...this.props.sizeStyles}>
             {this.props.sizes.map((size, index) => {
@@ -66,7 +66,7 @@ class ProductInfo extends Component {
                   height={this.props.boxHeight}
                   width={this.props.boxWidth}
                   key={index}
-                  background={item}
+                  background={item.value}
                 />
               );
             })}
